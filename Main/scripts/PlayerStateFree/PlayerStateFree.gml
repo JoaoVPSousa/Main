@@ -35,8 +35,16 @@ y = y + vspd;
 //Jump
 if place_meeting(x,y+1,obj_wall) and jump
 {
-vspd -= 8;
+vspd -= 12;
 }
+
+//Descendo da plataforma
+if (place_meeting(x, y + 1, obj_wall_transpassar)) and down
+{
+	obj_player.y++;
+}
+
+
 #endregion
 #region Troca os sprites
 	if (hspd != 0) image_xscale = sign(hspd); 
